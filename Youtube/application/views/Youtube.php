@@ -9,14 +9,14 @@
         
     </head>
     <body>
-        <h2>Search Videos on YouTube Test</h2>
+        <h2>Search Videos on YouTube</h2>
         <div class="search-form-container">
             <form id="keywordForm" method="post" action=''>
                 <div class="input-row">
-                    Search Keyword : <input class="input-field" type="search" id="keyword" name="keyword"  placeholder="Enter Search Keyword">
+                    Search Keyword : <input class="input-field" type="search" id="keyword" name="keyword"  placeholder="Enter Search Keyword..." required>
                 </div>
                 <div class="input-row">
-                <input type="number" class="input-field" id="result" name="result" placeholder="Max Results" min="1" max="20" required>
+                Max Results: <input type="number" class="input-field" id="result" name="result" placeholder="Max Results Resuired..." min="1" max="20" required>
                    </div>
                 <input class="btn-submit"  type="submit" name="submit" value="Submit">
             </form>
@@ -51,11 +51,12 @@
             <div class="result-heading">About <?php echo $max; ?> Results</div>
             <div class="videos-data-container" id="SearchResultsDiv">
             <?php
+				  $key=0;
                 for ($i = 0; $i < $max; $i++) {
                     if($value['items'][$i]['id']['kind']=='youtube#video'){
-                    $videoId = $value['items'][$i]['id']['videoId'];
-                    $title = $value['items'][$i]['snippet']['title'];
-                    $description = $value['items'][$i]['snippet']['description'];
+                    $videoId = $value['items'][$key]['id']['videoId'];
+                    $title = $value['items'][$key]['snippet']['title'];
+                    $description = $value['items'][$key]['snippet']['description'];
                     ?> 
     
                         <div class="video-tile">
@@ -69,9 +70,10 @@
                         </div>
                         </div>
            <?php 
+						$key++;
                 }
                  else{
-//                   echo "Sorry, No Results found for the Search <b></u>".$keywords."</u> </b><br> Please Try some other Keyword";
+                  echo "Sorry, No Results found for the Search <b></u>".$keywords."</u> </b><br> Please Try some other Keyword";
                }
                }
               
