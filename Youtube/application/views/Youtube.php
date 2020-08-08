@@ -51,12 +51,12 @@
             <div class="result-heading">About <?php echo $max; ?> Results</div>
             <div class="videos-data-container" id="SearchResultsDiv">
             <?php
-				  $key=0;
+		
                 for ($i = 0; $i < $max; $i++) {
                     if($value['items'][$i]['id']['kind']=='youtube#video'){
-                    $videoId = $value['items'][$key]['id']['videoId'];
-                    $title = $value['items'][$key]['snippet']['title'];
-                    $description = $value['items'][$key]['snippet']['description'];
+                    $videoId = $value['items'][$i]['id']['videoId'];
+                    $title = $value['items'][$i]['snippet']['title'];
+                    $description = $value['items'][$i]['snippet']['description'];
                     ?> 
     
                         <div class="video-tile">
@@ -69,11 +69,10 @@
                         <div class="videoDesc"><?php echo $description; ?></div>
                         </div>
                         </div>
-           <?php 
-						$key++;
+           <?php 				
                 }
                  else{
-                  echo "Sorry, No Results found for the Search <b></u>".$keywords."</u> </b><br> Please Try some other Keyword";
+//                   echo "Sorry, No Results found for the Search <b></u>".$keywords."</u> </b><br> Please Try some other Keyword";
                }
                }
               
