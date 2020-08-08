@@ -3,7 +3,8 @@
 <html>
     <head>
         <title>YouTube API Project</title>
-        <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/style.css">
+        
+        <link rel="stylesheet" type="text/css" href="../Youtube/Css/Style.css">
         <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
         
     </head>

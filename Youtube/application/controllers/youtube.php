@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 //AIzaSyDliyJ5AjeSRT26ncDNo9SYQCTXVjSuFm4
-class youtube extends CI_Controller {
+class Youtube extends CI_Controller {
         
 	public function index()
 	{	
@@ -27,5 +27,5 @@ class youtube extends CI_Controller {
                   "message" => "Please enter the keyword."
                 );
         }*/
-          $this->load->view('youtube',$data);
+          $this->load->view('Youtube',$data);
 }}
